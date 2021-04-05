@@ -1,0 +1,55 @@
+{
+  "TOKEN": "",
+  "YOUTUBE_API_KEY": "",
+  "SOUNDCLOUD_CLIENT_ID": "",
+  "MAX_PLAYLIST_SIZE": 400,
+  "PREFIX": "paimon!",
+  "PRUNING": true,
+  "data": {
+        "CODAPI": {
+            "email": "",
+            "pass": ""
+        },
+        "sql": {
+            "host": "",
+            "user": "",
+            "password": "",
+            "database": "",
+            "toggle": true
+        },
+        "zenzo": {
+            "enabled": true,
+            "authkey": "",
+            "forge": {
+                "transfer": "http://127.0.0.1:10444/forge/transfer",
+                "create": "http://127.0.0.1:10444/forge/create",
+                "profiles": "http://127.0.0.1:10444/forge/profiles",
+                "items": "http://127.0.0.1:10444/forge/items",
+                "inventory": "http://127.0.0.1:10444/forge/inventory"
+            },
+            "host": "localhost",
+            "user": "",
+            "pass": ""
+        },
+        "streamlabs": "",
+        "owner_id": "",
+        "owner": "",
+        "twitch_api_key": "",
+        "destiny2api": "",
+        "TRNAPIKEY": "",
+        "authorization": "bots.discord.pw API",
+        "authorization1": "discordbots.org API",
+        "twitchname": "",
+        "hypixelAPI": "",
+        "StreamAlertChat": "",
+        "apikeychistools": "",
+        "joinleavechannel": "",
+        "topggapi": "TOP.GG",
+        "seChannelID": "",
+        "seJWT": "",
+        "slsocket": "",
+        "slApiAT": "",
+        "slCID": "",
+        "slCS": ""
+    }
+}

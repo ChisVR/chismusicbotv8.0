@@ -1,4 +1,4 @@
-const { LOCALE, DEFAULT_VOLUME } = require("../util/EvobotUtil");
+const { LOCALE, DEFAULT_VOLUME } = require("../util/BotUtil");
 const i18n = require("i18n");
 
 i18n.setLocale(LOCALE);

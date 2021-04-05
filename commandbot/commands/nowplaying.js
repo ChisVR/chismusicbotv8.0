@@ -23,20 +23,18 @@ module.exports = {
       .setColor("#F8AA2A")
       .setAuthor(message.client.user.username);
 
-    if (song.seekTime > 0) {
+    let progressBar = client.player.createProgressBar(message, {
+            size: 15,
+            block: '=',
+            arrow: '>'
+        });
       nowPlaying.addField(
-        "\u200b",
-        new Date(seek * 1000).toISOString().substr(11, 8) +
-          "[" +
-          createBar(song.seekTime == 0 ? seek : song.seekTime, seek, 20)[0] +
-          "]" +
-          (song.seekTime == 0 ? " ◉ LIVE" : new Date(song.seekTime * 1000).toISOString().substr(11, 8)),
+        "\u200b", progressBar,
         false
       );
       nowPlaying.setFooter(
         i18n.__mf("nowplaying.timeRemaining", { time: new Date(left * 1000).toISOString().substr(11, 8) })
       );
-    }
 
     return message.channel.send(nowPlaying);
   }

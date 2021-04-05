@@ -86,6 +86,7 @@ function generateQueueEmbed(message, queue) {
       .setTitle(i18n.__("queue.embedTitle"))
       .setThumbnail(message.guild.iconURL())
       .setColor("#F8AA2A")
+      .setThumbnail("https://apps.chisdealhd.co.uk/botimgs/pmoLfeY.gif")
       .setDescription(
         i18n.__mf("queue.embedCurrentSong", { title: queue[0].name, url: queue[0].url, info: info })
       )

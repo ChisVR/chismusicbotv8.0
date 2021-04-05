@@ -1,15 +1,9 @@
 const { MessageEmbed } = require("discord.js");
 const { LOCALE } = require("../util/BotUtil");
+//const i18n = require("i18n");
 const i18n = require("i18n");
 
 i18n.setLocale(LOCALE);
-
-const { Player, Utils } = require("discord-music-player");
-const player = new Player(client, {
-    leaveOnEmpty: false,
-});
-
-client.player = player;
 
 module.exports = {
   name: "queue",
@@ -22,7 +16,7 @@ module.exports = {
     if (!permissions.has(["MANAGE_MESSAGES", "ADD_REACTIONS"]))
       return message.reply(i18n.__("queue.missingPermissionMessage"));
 
-    const queue = client.player.getQueue(message);
+    const queue = message.client.player.getQueue(message);
     if (!queue) return message.channel.send(i18n.__("queue.errorNotQueue"));
 
     let currentPage = 0;

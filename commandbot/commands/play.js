@@ -1,14 +1,7 @@
 const { LOCALE, DEFAULT_VOLUME } = require("../util/BotUtil");
 const i18n = require("i18n");
 
-i18n.setLocale(LOCALE);
-
-const { Player, Utils } = require("discord-music-player");
-const player = new Player(client, {
-    leaveOnEmpty: false,
-});
-
-client.player = player;
+i18n.setLocale("en");
 
 module.exports = {
   name: "play",
@@ -16,9 +9,10 @@ module.exports = {
   aliases: ["p"],
   description: i18n.__("play.description"),
   async execute(message, args) {
+  
     const { channel } = message.member.voice;
 
-    const serverQueue = client.player.getQueue(message);
+    const serverQueue = message.client.player.getQueue(message);
     if (!channel) return message.reply(i18n.__("play.errorNotChannel")).catch(console.error);
     if (serverQueue && channel !== message.guild.me.voice.channel)
       return message
@@ -34,14 +28,14 @@ module.exports = {
     if (!permissions.has("CONNECT")) return message.reply(i18n.__("play.missingPermissionConnect"));
     if (!permissions.has("SPEAK")) return message.reply(i18n.__("play.missingPermissionSpeak"));
 
-    if(client.player.isPlaying(message)) {
-        let song = await client.player.addToQueue(message, args.join(' '));
+    if(message.client.player.isPlaying(message)) {
+        let song = await message.client.player.addToQueue(message, args.join(' '));
 
         if(song)
             console.log(`Added ${song.name} to the queue`);
         return;
     } else {
-        let song = await client.player.play(message, args.join(' '));
+        let song = await message.client.player.play(message, args.join(' '));
             
         if(song)
             console.log(`Started playing ${song.name}`);

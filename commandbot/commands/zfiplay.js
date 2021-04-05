@@ -1,5 +1,6 @@
 const { LOCALE, DEFAULT_VOLUME } = require("../util/BotUtil");
 const i18n = require("i18n");
+const fetch = require('node-fetch');
 
 i18n.setLocale("en");
 

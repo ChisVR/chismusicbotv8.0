@@ -23,7 +23,7 @@ module.exports = {
       .setColor("#F8AA2A")
       .setAuthor(message.client.user.username);
 
-    let progressBar = client.player.createProgressBar(message, {
+    let progressBar = message.client.player.createProgressBar(message, {
             size: 15,
             block: '=',
             arrow: '>'

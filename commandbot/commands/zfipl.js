@@ -4,9 +4,9 @@ const i18n = require("i18n");
 i18n.setLocale("en");
 
 module.exports = {
-  name: "playlist",
+  name: "zenzopl",
   cooldown: 3,
-  aliases: ["pl"],
+  aliases: ["zfipl"],
   description: i18n.__("playlist.description"),
   async execute(message, args) {
   

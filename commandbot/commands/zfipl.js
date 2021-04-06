@@ -15,8 +15,8 @@ module.exports = {
     		let body = await reszfi.json();
     
     const zfiurl = JSON.parse(body[0].metadata);
-	
-    const zfiyt = zfiurl.embedpl;
+    
+	  var zfiyt = zfiurl['ytpl'] || zfiurl['spotifypl'];
     
     const { channel } = message.member.voice;
     const serverQueue = message.client.player.getQueue(message);
@@ -38,7 +38,7 @@ module.exports = {
         
 
     await message.client.player.playlist(message, {
-            search: zfiyt,
+            search: `${zfiyt}`,
             maxSongs: MAX_PLAYLIST_SIZE
         });
   }

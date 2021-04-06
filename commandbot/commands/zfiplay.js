@@ -16,7 +16,7 @@ module.exports = {
     
     const zfiurl = JSON.parse(body[0].metadata);
 	
-    const zfiyt = zfiurl.embed;
+    var zfiyt = zfiurl['yt'] || zfiurl['spotify'];
     
     const { channel } = message.member.voice;
 
@@ -37,13 +37,13 @@ module.exports = {
     if (!permissions.has("SPEAK")) return message.reply(i18n.__("play.missingPermissionSpeak"));
 
     if(message.client.player.isPlaying(message)) {
-        let song = await message.client.player.addToQueue(message, zfiyt);
+        let song = await message.client.player.addToQueue(message, `${zfiyt}`);
 
         if(song)
             console.log(`Added ${song.name} to the queue`);
         return;
     } else {
-        let song = await message.client.player.play(message, args.join(' '));
+        let song = await message.client.player.play(message, `${zfiyt}`);
             
         if(song)
             console.log(`Started playing ${song.name}`);
